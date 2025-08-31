@@ -1,5 +1,5 @@
 # Event-Management-System
-A Web Application for where users can manage, view and organize events.
+A Web Application where users can manage, view and organize events.
  ## Features
  - Add, update, and delete events
  - View, event details
