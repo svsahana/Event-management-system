@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Details</title>
+	<meta charset="utf-8" />
+	<link href="../static/css/styles.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../static/css/Home.css">
+    <link rel="stylesheet" href="../static/css/tables.css">
+    <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../static/css/all.css">
+    <link rel="stylesheet" href="../static/css/all.min.css">
+	
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        
+    body {
+      background-image: url('../static/images/img.jpg');
+      background-size: cover;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .topnav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 12px;
+      background-color: #2729ab;
+    }
+
+    .topnav a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 15px;
+      font-size: 16px;
+    }
+
+    .topnav a:hover,
+    .topnav a.active {
+      background-color: #2415f36c;
+      border-radius: 5px;
+    }
+
+    </style>
+	
+</head>
+
+<body style="background-image:url('../static/images/img.jpg')">
+	
+
+	<div class="topnav">
+		<a href="http://localhost:8888/Home" style="margin-left:25%">My Events</a>
+		<a href="http://localhost:8888/CreateEvent" >Create Event</a>
+		<a href="http://localhost:8888/InvitedEvents">Invited Events</a>
+		<a href="http://localhost:8888/Attending">Attending</a>
+        <a href="http://localhost:8888/EventDetails/logout">Log Out</a>
+    </div>
+      <table>
+  <tr>
+    <th style="color: rgb(86, 86, 239);">Name</th>
+    <th style="color: rgb(86, 86, 239);">Username</th>
+  </tr>
+  <tr>
+    <td><!-- event_name --></td>
+    <td><!-- creator --></td>
+  </tr>
+</table>
+	
+	<!-- content -->
+
+</body>
+</html>

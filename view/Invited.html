@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Invited Event</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../static/css/styles.css">
+    <link rel="stylesheet" href="../static/css/Home.css">
+    <link rel="stylesheet" href="../static/css/tables.css">
+    <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../static/css/all.css">
+    <link rel="stylesheet" href="../static/css/all.min.css">
+	<style>
+    body {
+      background-image: url('../static/images/img.jpg');
+      background-size: cover;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .topnav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 12px;
+      background-color: #2729ab;
+    }
+
+    .topnav a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 15px;
+      font-size: 16px;
+    }
+
+    .topnav a:hover,
+    .topnav a.active {
+      background-color: #2415f36c;
+      border-radius: 5px;
+    }
+
+
+    .dark-mode {
+      background-color: #121212 !important;
+      color: white !important;
+    }
+
+    .dark-mode .topnav {
+      background-color: #222 !important;
+    }
+
+    .dark-mode a {
+      color: white;
+    }
+    .dark-toggle {
+      cursor: pointer;
+      font-size: 20px;
+	  gap: 15px;
+      margin-left: auto;
+	  display: flex;
+	  align-items: center;
+    }
+  </style>
+
+</head>
+<script>
+	function Attending(id){
+		xhttp = new XMLHttpRequest();
+		var s ="";
+		for(var i=1; i<id.length; i++)
+			s+=id[i];
+		var integer = parseInt(s, 10);
+			
+		xhttp.open("POST", "http://localhost:8888/InvitedEvents/Attending", true);
+		xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		xhttp.send("id=" + integer);
+			  
+		xhttp.onreadystatechange = function() {
+			if (this.readyState == 4) {
+				alert("You have Attending events");
+				document.getElementById("container").innerHTML =
+				this.responseText;
+			}
+		};
+	
+	}
+	
+    function toggleMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+
+
+</script>
+
+<body style="background-image:url('../static/images/img.jpg')">
+    <div class="topnav">
+		<a href="http://localhost:8888/Home" style="margin-left:25%">My Events</a>
+		<a href="http://localhost:8888/CreateEvent" >Create Event</a>
+		<a href="#" class="active">Invited Events</a>
+		<a href="http://localhost:8888/Attending" >Attending</a>
+        <a href="http://localhost:8888/InvitedEvents/logout">Log Out</a>
+		<span onclick="toggleMode()" class="dark-toggle">🌙</span>
+    </div>
+    <div>
+        <div class="container">
+               
+                <div class="productcontainer" id = "container">
+                    
+                    <!-- content -->    
+                 
+                
+                </div>
+        </div>
+    </div>
+
+</body>
+</html>
